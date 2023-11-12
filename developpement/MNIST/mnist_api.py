@@ -10,8 +10,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 app = Flask(__name__)
 
-parser = ...
-...
+parser = ... 
+... # add an argument '--model_path'
 model_path = ...
 
 model = MNISTNet().to(device)
@@ -42,4 +42,4 @@ def predict():
     return jsonify({"prediction": int(predicted[0])})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
