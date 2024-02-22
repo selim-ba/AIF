@@ -28,6 +28,7 @@ jobs:
         git config --global user.email "davidbertoin@gmail.com"
         git config --global user.name "David Bertoin"
         git clone https://x-access-token:${GITHUB_TOKEN}@github.com/DavidBert/testn7.git
+        rm docs/index.md
         cp -r docs/ testn7/docs/ 
         cd testn7
         # Set up git to use the GITHUB_TOKEN
