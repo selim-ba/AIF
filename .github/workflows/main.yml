@@ -1,6 +1,9 @@
 name: Sync Files to Repo testn7
 
-on: push
+on:
+  push:
+    branches:
+      - website
 
 jobs:
   sync:
