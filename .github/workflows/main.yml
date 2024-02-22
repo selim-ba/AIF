@@ -1,0 +1,24 @@
+name: Sync Files to Repo testn7
+
+on: push
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: 'DavidBert/AIF2024'
+        ref: 'website'
+    - name: Copy files
+      run: |
+        git config --global user.email "davidbertoin@gmail.com"
+        git config --global user.name "David Bertoin"
+        git clone https://github.com/DavidBert/testn7.git
+        cp -r docs/ testn7/docs/ 
+        cd testn7
+        git add .
+        git commit -m "Sync files from Repo AIF2024"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
