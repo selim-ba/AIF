@@ -11,14 +11,19 @@ jobs:
         repository: 'DavidBert/AIF2024'
         ref: 'website'
     - name: Copy files
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.email "davidbertoin@gmail.com"
         git config --global user.name "David Bertoin"
-        git clone https://github.com/DavidBert/testn7.git
+        git clone https://x-access-token:${GITHUB_TOKEN}@github.com/DavidBert/testn7.git
         cp -r docs/ testn7/docs/ 
         cd testn7
+        # Set up git to use the GITHUB_TOKEN
+        git config --local user.email "davidbertoin@gmail.com"
+        git config --local user.name "David Bertoin"
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/DavidBert/testn7.git
+        
         git add .
         git commit -m "Sync files from Repo AIF2024"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
