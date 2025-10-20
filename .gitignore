@@ -3,3 +3,8 @@
 developpement/data/
 ood/data/
 *.ipynb_checkpoints/
+
+# ignore data & checkpoints
+developpement/data/
+ood/data/
+*.ipynb_checkpoints/
