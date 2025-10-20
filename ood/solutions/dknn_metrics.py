@@ -19,7 +19,7 @@ plt.show()
 auroc = roc_auc(scores_negatives, scores_positives)
 metrics_dict['DKNN']['auroc'] = auroc
 
-threshold = compute_threshold(scores_negatives, target_tpr)
+threshold = compute_threshold(scores_positives, target_tpr)
 
 metrics_dict['DKNN']['accuray'] = accuracy(scores_negatives, scores_positives, threshold)
 metrics_dict['DKNN']['tpr'], metrics_dict['DKNN']['fpr'] = tpr_fpr(scores_negatives, scores_positives, threshold)

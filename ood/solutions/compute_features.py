@@ -10,6 +10,6 @@ def compute_features(dataset, model, device):
     return torch.cat(all_features, dim=0)  # Concatenate all logits into a single tensor
 
 # Apply the function to CIFAR-10 train, test, and SVHN test datasets
-train_features = compute_features(cifar_train, model, device)
+fit_features = compute_features(cifar_train, model, device)
 test_features_negatives = compute_features(cifar_test, model, device)
 test_features_positives = compute_features(svhn_test, model, device)

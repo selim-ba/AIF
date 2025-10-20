@@ -19,7 +19,7 @@ plt.show()
 auroc = roc_auc(scores_negatives, scores_positives)
 metrics_dict['Mahalanobis']['auroc'] = auroc
 
-threshold = compute_threshold(scores_negatives, target_tpr)
+threshold = compute_threshold(scores_positives, target_tpr)
 
 metrics_dict['Mahalanobis']['accuray'] = accuracy(scores_negatives, scores_positives, threshold)
 metrics_dict['Mahalanobis']['tpr'], metrics_dict['Mahalanobis']['fpr'] = tpr_fpr(scores_negatives, scores_positives, threshold)
