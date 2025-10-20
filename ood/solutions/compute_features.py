@@ -7,6 +7,6 @@ def compute_features(data_loader, model, device):
     return np.array(features)
 
 
-fit_features = compute_features(train_loader)
-test_features_negatives = compute_features(cifar_test_loader)
-test_features_positives = compute_features(svhn_test_loader)
+fit_features = compute_features(train_loader, model, device)
+test_features_negatives = compute_features(cifar_test_loader, model, device)
+test_features_positives = compute_features(svhn_test_loader, model, device)

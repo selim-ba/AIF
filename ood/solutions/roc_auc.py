@@ -30,7 +30,7 @@ def roc_auc(scores_negatives, scores_positives):
     fpr = np.array(fpr)
 
     # Compute AUROC (Area Under the Curve)
-    auroc = - np.trapz(tpr, fpr)
+    auroc = - np.trapezoid(tpr, fpr)
 
     # Plot ROC curve
     plt.figure()
