@@ -1,0 +1,5 @@
+
+# data (ignored)
+developpement/data/
+ood/data/
+*.ipynb_checkpoints/
